@@ -1,0 +1,20 @@
+{
+  "name": "iDoneThis-littleprinter",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "littleprinter": "*",
+    "icalendar": "0.6.5",
+    "request": "*",
+    "express": "*",
+    "express3-handlebars": "*",
+    "moment": "*"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}
