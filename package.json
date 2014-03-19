@@ -12,7 +12,8 @@
     "request": "*",
     "express": "*",
     "express3-handlebars": "*",
-    "moment": "*"
+    "moment": "*",
+    "coffee-script": "*"
   },
   "repository": "",
   "author": "",
