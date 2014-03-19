@@ -1,4 +1,3 @@
-app = require('./app')
 DoneThis = require('./DoneThis')
 
 class Handler
@@ -27,7 +26,7 @@ class Handler
 
       #use default edition handler
       edition: (l, d, other, done) ->
-        done('needs a feed url', {}) unless other?.feedURL?
+        return done('needs a feed url', {}) unless other.feedURL?
         cal = new DoneThis(other.feedURL).loadCalendar()
         cal.on 'parse_completed', =>
           app.locals.descriptions = cal.descriptions

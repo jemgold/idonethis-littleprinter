@@ -17,7 +17,7 @@ class DoneThis extends EventEmitter
 
   loadFile: ->
     fs.readFile @path, {encoding: 'UTF8'}, (err, data) =>
-      throw err if err
+      # throw err if err
       @parseCalendar(data)
 
   loadURL: ->
@@ -36,8 +36,6 @@ class DoneThis extends EventEmitter
       if event.inTimeRange(d, dEnd)
         @descriptions =  event.getPropertyValue('DESCRIPTION').split('\n')
         @date =  event.getPropertyValue('DTSTART')
-
-        console.log @descriptions
 
     @emit 'parse_completed'
 
