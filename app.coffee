@@ -13,15 +13,20 @@ app.set('view engine', 'handlebars')
 littleprinter.setup(app, handler.json())
 
 app.post '/validate_config', (req, res) ->
-  return res.send(400) unless req.params.feedURL?
 
-  return res.send(200)
+  return res.send(400) unless req.query.config?
+
+  response = {
+    errors: []
+    valid: true
+  }
+
+  # if !req.query.config.feedURL?
+  #   response.errors.push 'Please enter a valid iDoneThis URL'
+  #   response.valid = false
+
+  return res.type('json').status(200).send(response)
 
 app.listen(port)
-
-# process.on 'uncaughtException', (err) ->
-#   console.error('uncaughtException:', err.message)
-#   console.error(err.stack)
-#   process.exit(1)
 
 module.exports = app
