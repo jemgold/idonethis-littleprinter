@@ -12,6 +12,11 @@ app.set('view engine', 'handlebars')
 
 littleprinter.setup(app, handler.json())
 
+app.post '/validate_config', (req, res) ->
+  return res.send(400) unless req.params.feedURL?
+
+  return res.send(200)
+
 app.listen(port)
 
 # process.on 'uncaughtException', (err) ->
