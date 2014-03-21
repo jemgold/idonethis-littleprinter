@@ -14,7 +14,7 @@ littleprinter.setup(app, handler.json())
 
 app.post '/validate_config', (req, res) ->
 
-  return res.send(400) unless req.query.config? or res.query.test?
+  return res.send(400) unless req.query.config?
 
   response = {
     errors: []
