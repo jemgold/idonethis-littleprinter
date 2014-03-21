@@ -26,8 +26,8 @@ class Handler
 
       #use default edition handler
       edition: (l, d, other, done) ->
-        return done(400, {}) unless other.feedURL?
         return done(null, {}) if other.test is true
+        return done(400, {}) unless other.feedURL?
 
         cal = new DoneThis(other.feedURL).loadCalendar()
         cal.on 'parse_completed', =>
