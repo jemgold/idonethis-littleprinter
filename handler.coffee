@@ -18,7 +18,7 @@ class Handler
         config:
           fields: [
             {
-              type: 'url',
+              type: 'text',
               name: 'feedURL',
               label: "What's your iDoneThis feed URL?"
             }
