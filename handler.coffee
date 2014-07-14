@@ -37,7 +37,7 @@ class Handler
 
       #use default sample handler
       sample: (done) ->
-        cal = new DoneThis('jongold-idonethis.ics').loadCalendar()
+        cal = new DoneThis('sample.ics').loadCalendar()
         cal.on 'parse_completed', =>
           app.locals.descriptions = cal.descriptions
           app.locals.date = cal.niceDate()
